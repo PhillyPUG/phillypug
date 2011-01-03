@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div id="memberlist">
+<p>
+ {% for sublist in member_info %}
+    <ul>
+    {% for m in sublist%}
+      <li>{{ m.name }}</li>
+    {% endfor %}
+    </ul>
+  {%endfor%}
+</p>
+</div>
+{% endblock %}

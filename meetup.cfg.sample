@@ -1,0 +1,4 @@
+[meetup]
+url_base=https://api.meetup.com/%s.json
+key=<CHANGE THIS>
+group_id=1555984

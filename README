@@ -1,0 +1,19 @@
+This is a glorified meetup.com proxy.
+
+Once you have cloned this, use meetup.cfg.sample as a template.
+
+Modify meetup.cfg.sample to use your API key. Do not addit to your repo.
+
+Update settings.py to point to your meetup.cfg
+
+TODO:
+
+* Add a cache layer to both improve performance as well as compensate
+for temporary outages of connectivity to meetup.com.
+
+* The look and feel is not remotely done or as nice as it could be.
+
+* Pagination where needed
+
+* Components of pinax (http://pinaxproject.com/) might be nice to
+  integrate in.

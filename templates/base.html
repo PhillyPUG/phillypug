@@ -1,0 +1,48 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <link rel="stylesheet" href="/static/style.css" />
+    <link type="text/css" href="/static/css/vader/jquery-ui-1.8.6.custom.css" rel="stylesheet" />   
+    <script type="text/javascript" src="/static/js/jquery-1.4.2.min.js"></script>
+    <script type="text/javascript" src="/static/js/jquery-ui-1.8.6.custom.min.js"></script>
+    <title>{% block title %}PhillyPUG{% endblock %}</title>
+</head>
+<body>
+
+<div id="header">
+  <ul>
+    <li><a href="{% url about.views.index %}">About</a></li>
+    <li>&nbsp;</li>
+    <li><a href="{% url memberlist.views.index %}">Members</a></li>
+    <li>&nbsp</li>
+    <li><a href="{% url events.views.index %}">Events</a></li>
+  </ul>
+  <p>
+     PhillyPUG site (LOGO Wanted)
+  </p>
+</div>
+
+
+<div id="main_tile">
+
+  <div id="content">
+  {% block content %} {% endblock %}
+  </div>
+
+  <div id="rightnav">
+    <div id="recent_activity">
+    <p>Recent Activity</p>
+    </div>
+    <div id="recent_discussions">
+    <p>Recent Discussions</p>
+    </div>
+  </div>
+</div>
+
+<div id="footer">
+<a href="http://www.meetup.com/phillypug/">The PhillyPug Meetup Group</a>
+</div>
+
+</body>
+</html>
