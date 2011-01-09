@@ -21,9 +21,6 @@ class MeetupTests(unittest.TestCase):
         util = MeetupUtil()
         params = "group_id=" + util.get_group_id()
         results = util.call_remote('events',params)
-#         for i in results['results']:
-#             print "\t %s" % i
-#         print "Got results %s " % results
         self.assertTrue(results)
 if "__main__" == __name__:
     unittest.main()

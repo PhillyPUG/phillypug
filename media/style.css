@@ -107,5 +107,16 @@ a {
     text-decoration:none;
 }
 a:visited { color: #FFFFFF; }
+
+.clickable {
+  text-decoration: underline;
+}
+
+.clickable:hover {
+  text-decoration: underline;
+  color: #000;
+}
+
+
 //a:hover { color: #12121212; background-color:#000; }
 

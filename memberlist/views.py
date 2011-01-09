@@ -1,25 +1,26 @@
 # Create your views here.
+import json
 from django.template import Context, loader
 from django.http import HttpResponse
 from meetup import MeetupUtil
 
-
+'''
+Get the Member Info for the philly pug and marshal it into a json object
+that the info page can use to render.
+'''
 def index(request):
-    util = MeetupUtil()
-    params = "group_id=" + util.get_group_id()
-    results = util.call_remote('members', params)
-    memberinfo = results['results']
-    # Break the list up into columns to be painted
-    retval = []
-    size = len(memberinfo)
-    i = 0
-    slice_size = 25
-    while i < size:
-        chunk_end = i + slice_size
-        sublist = memberinfo[i:chunk_end]
-        retval.append(sublist)
-        i = i + slice_size
+  # Break the list up into columns to be painted
+  t = loader.get_template('members/index.html')
+  info = _getMeetupData()
+  c = Context({ 'member_info': "%s" % info})
+  return HttpResponse(t.render(c))
 
-    t = loader.get_template('members/index.html')
-    c = Context({ 'member_info': retval})
-    return HttpResponse(t.render(c))
+def _getMeetupData():
+  '''
+  Returns a stringified json object suitable for the browser to load and use.
+  '''
+  util = MeetupUtil()
+  params = "group_id=" + util.get_group_id()
+  wrapper = util.call_remote('members', params)
+  results = wrapper['results']
+  return json.dumps(results)

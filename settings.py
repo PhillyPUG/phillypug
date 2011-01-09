@@ -91,9 +91,11 @@ INSTALLED_APPS = (
     'django.contrib.sessions',
     'django.contrib.sites',
     'django.contrib.messages',
-    # Uncomment the next line to enable the admin:
     'django.contrib.admin',
     'django.contrib.admindocs',
+    'memberlist',
+    'about',
+    'events',
 )
 
 MEETUP_CFG="/etc/phillypug/meetup.cfg"
