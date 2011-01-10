@@ -34,8 +34,8 @@
 
 function draw_navigation(){
   $("#page_navigation").text('');
-  $("#page_navigation").append("<div style=\"float:left;\" id=\"prev_page\" class=\"clickable\">Previous</div>");
-  $("#page_navigation").append("<div style=\"float:left;\" id=\"next_page\" class=\"clickable\">Next</div>");
+  $("#page_navigation").append("<div style=\"float:left;text-decoraton:underline;\" id=\"prev_page\" class=\"clickable\">Previous</div>");
+  $("#page_navigation").append("<div style=\"float:leftl;text-decoraton:underline;\" id=\"next_page\" class=\"clickable\">Next</div>");
   var displayed_pagenum = parseInt($("#current_page").val()) + 1;
   $("#page_navigation").append("<p style=\"align:center;\">Page " + displayed_pagenum + " of " + total_pages + "</p>");
   var cur_page = parseInt($("#current_page").val());
@@ -63,7 +63,7 @@ function render_next_page(next_page_num){
       m = members[i];
       $("#inner_accordion").append("<h3><a href=\"#\" class=\"clickable\">" + m['name'] + "</a></h3>");
       $("#inner_accordion").append("<div><p>" + m['bio'] + "</p>" +
-          "<p><a target=\"_blank\" href=\"" + m['link'] + "\">Meetup Profile</a></p></div>");
+          "<p class=\"clickable\"><a target=\"_blank\" href=\"" + m['link'] + "\">Meetup Profile</a></p></div>");
 
     }
   }
