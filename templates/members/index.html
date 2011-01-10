@@ -62,7 +62,9 @@ function render_next_page(next_page_num){
     if (i >= start && i < end){
       m = members[i];
       $("#inner_accordion").append("<h3><a href=\"#\" class=\"clickable\">" + m['name'] + "</a></h3>");
-      $("#inner_accordion").append("<div><p>" + m['bio'] + "</p></div>");
+      $("#inner_accordion").append("<div><p>" + m['bio'] + "</p>" +
+          "<p><a target=\"_blank\" href=\"" + m['link'] + "\">Meetup Profile</a></p></div>");
+
     }
   }
   $("#inner_accordion").accordion();
